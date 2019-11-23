@@ -131,4 +131,23 @@ public class Weather {
 		return dayName;
 	}
 
+	public void printAdvancedInformation() {
+		System.out.println("In " + this.country
+				+ " during next 7 day will be following weather "
+				+ Arrays.toString(this.daysWeather));
+		System.out.println("the highest temperature will be on "
+				+ getHottestDayName() + " " + getHottestTemperature()
+				+ " degree");
+		System.out.println("the lowest temperature will be on "
+				+ getColdestDayName() + " " + getColdestTemperature()
+				+ " degree");
+	}
+
+	// Create method printAdvancedInformation() in Weather class
+	// Output:
+	// "In 'Latvia' during next 7 day will be following weather '-2, 0, 5,
+	// 2, 6, -1, 0',
+	//
+	// latvia.printAdvancedInformation();
+
 }

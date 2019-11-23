@@ -91,7 +91,7 @@ public class ObjectPractice {
 		// 2, 6, -1, 0',
 		// the highest temperature will be on Friday +6 degree,
 		// the lowest temperature will be on Monday -2 degree"
-		// latvia.printAdvancedInformation();
+		Latvia.printAdvancedInformation();
 
 		// Task 13 - we need possibility to update weather temperature based on
 		// coming warm cyclone, and increase weather temperature for each day by
