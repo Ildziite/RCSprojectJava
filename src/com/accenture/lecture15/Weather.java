@@ -143,11 +143,10 @@ public class Weather {
 				+ " degree");
 	}
 
-	// Create method printAdvancedInformation() in Weather class
-	// Output:
-	// "In 'Latvia' during next 7 day will be following weather '-2, 0, 5,
-	// 2, 6, -1, 0',
-	//
-	// latvia.printAdvancedInformation();
+	public void applyWarmCycloneEffect() {
+		for (int i = 0; i < this.daysWeather.length; i++) {
+			this.daysWeather[i] = this.daysWeather[i] + 1;
+		}
+	}
 
 }
