@@ -45,17 +45,65 @@ public class Weather {
 		return max;
 	}
 
+	public int getColdestTemperature() {
+		int min = this.daysWeather[0];
+		for (int i = 1; i < this.daysWeather.length; i++) {
+			if (min > this.daysWeather[i]) {
+				min = this.daysWeather[i];
+			}
+		}
+		return min;
+	}
+
 	public String getHottestDayName() {
 		int max = this.daysWeather[0];
 		int maxIndex = 0;
 		for (int i = 1; i < this.daysWeather.length; i++) {
 			if (max < this.daysWeather[i]) {
 				maxIndex = i;
-				max=this.daysWeather[i];
+				max = this.daysWeather[i];
 			}
 		}
 		String dayName;
 		switch (maxIndex) {
+		case 0:
+			dayName = "Monday";
+			break;
+		case 1:
+			dayName = "Tuesday";
+			break;
+		case 2:
+			dayName = "Wednesday";
+			break;
+		case 3:
+			dayName = "Thursday";
+			break;
+		case 4:
+			dayName = "Friday";
+			break;
+		case 5:
+			dayName = "Saturday";
+			break;
+		case 6:
+			dayName = "Sunday";
+			break;
+		default:
+			dayName = "error";
+		}
+		return dayName;
+	}
+
+	public String getColdestDayName() {
+		int min = this.daysWeather[0];
+		int minIndex = 0;
+		for (int i = 1; i < this.daysWeather.length; i++) {
+			if (min > this.daysWeather[i]) {
+				minIndex = i;
+				min = this.daysWeather[i];
+			}
+		}
+		String dayName;
+		switch (minIndex) {
 		case 0:
 			dayName = "Monday";
 			break;

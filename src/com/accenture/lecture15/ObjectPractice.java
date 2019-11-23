@@ -59,7 +59,8 @@ public class ObjectPractice {
 		// Task 8 - Create a method in class Weather which will return highest
 		// temperature
 		// Output: Highest temperature in Latvia will be 6
-		 System.out.println("Highest temperature in Latvia will be " + Latvia.getHottestTemperature());
+		System.out.println("Highest temperature in Latvia will be "
+				+ Latvia.getHottestTemperature());
 
 		// Task 9 - Create a method in class Weather which will return hottest
 		// day name, lets assume:
@@ -67,20 +68,20 @@ public class ObjectPractice {
 		// - there will be 7 days forecasts only
 		// Use switch statement in order to solve it
 		// Output: Hottest day in Latvia will be Friday
-		 System.out.println("Hottest day in Latvia will be " +
-		 Latvia.getHottestDayName());
+		System.out.println("Hottest day in Latvia will be "
+				+ Latvia.getHottestDayName());
 
 		// Task 10 - Create a method in class Weather which will return highest
 		// temperature
 		// Output: Lowest temperature in Latvia will be -2
-		// System.out.println("Lowest temperature in Latvia will be"
-		// +latvia.getColdestTemperature());
+		System.out.println("Lowest temperature in Latvia will be "
+				+ Latvia.getColdestTemperature());
 
 		// Task 11 - Create a method in class Weather which will return coldest
 		// day name:
 		// Output: Hottest day in Latvia will be Monday
-		// System.out.println("Hottest day in Latvia will be" +
-		// latvia.getColdestDayName());
+		System.out.println("Coldest day in Latvia will be "
+				+ Latvia.getColdestDayName());
 
 		// Task 12 - User wants to get advanced information printed out into
 		// console about weather in specific country
