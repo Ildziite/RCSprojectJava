@@ -67,8 +67,8 @@ public class ObjectPractice {
 		// - there will be 7 days forecasts only
 		// Use switch statement in order to solve it
 		// Output: Hottest day in Latvia will be Friday
-		// System.out.println("Hottest day in Latvia will be" +
-		// latvia.getHottestDayName());
+		 System.out.println("Hottest day in Latvia will be " +
+		 Latvia.getHottestDayName());
 
 		// Task 10 - Create a method in class Weather which will return highest
 		// temperature
