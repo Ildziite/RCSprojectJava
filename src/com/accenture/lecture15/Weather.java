@@ -34,5 +34,16 @@ public class Weather {
 		double average = sum / this.daysWeather.length;
 		return average;
 	}
+	
+	public  int getHottestTemperature() {
+		int max = this.daysWeather[0];
+		for (int i = 1; i < this.daysWeather.length; i++) {
+			if (max < this.daysWeather[i]) {
+				max = this.daysWeather[i];
+			}
+		}
+		return max;
+	}
+
 
 }
