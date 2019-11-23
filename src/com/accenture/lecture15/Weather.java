@@ -1,6 +1,7 @@
 package com.accenture.lecture15;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Weather {
 
@@ -123,4 +124,21 @@ public class Weather {
 		return dayName;
 	}
 
+	public static double celsiusToFahrenheit(double celsiusTemperature) {
+		return celsiusTemperature * 1.8 + 32;
+	}
+
+	public static Weather getWeatherForecast(String countryName) {
+		return new Weather(countryName, makeWeekForecastArray());
+	}
+
+	private static int[] makeWeekForecastArray() {
+		Random rand = new Random();
+		int[] array = new int[7];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = rand.nextInt((30 + 30) + 1) - 30;
+			// return r.nextInt((max - min) + 1) + min;
+		}
+		return array;
+	}
 }

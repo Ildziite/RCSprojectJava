@@ -102,6 +102,48 @@ public class ObjectPractice {
 		Latvia.applyWarmCycloneEffect();
 		System.out.println(Latvia);
 
+		// Task 14 - I want to be able to convert Celsius temperature into
+		// Fahrenheit
+		// create a static method in Weather class: public static double
+		// celsiusToFahrenheit(double celsiusTemperature)
+		// Output: 10 in Celsius will be 50 in Fahrenheit
+		System.out.println("10 in Celsius will be "
+				+ Weather.celsiusToFahrenheit(10) + " in Fahrenheit");
+
+		// Task 15 - We need that some one would provide to us weather forecast
+		// for specific country
+		// - create a static method which will create a 7 day forecast for
+		// specific country
+		// public static Weather getWeatherForecast(String countryName)
+		// - google for random value generator, in order to fill day weather
+		// with some values
+		// Example:
+		Weather lithuania = Weather.getWeatherForecast("Lithuania");
+		lithuania.printAdvancedInformation();
+
+		// Extra Task 16 - I as a worker of weather forecast center want to be
+		// able to overview and interact with weather forecasts
+		// - create a new class WeatherForecastApp in package
+		// com.accentrue.lecture15
+		// - create a predefined list of weather forecast, at least for 3
+		// countries and store them in ArrayList
+		// - User should be interact through console and should be able to:
+		// -- [l] - list country names for which forecast exist
+		// -- [a] - add new forecast, by providing country name and one day
+		// forecast temperature
+		// -- [d] - delete forecast, by specifying country name
+		// -- [g] - generate new weather forecast, by specifying country name
+		// -- [q] - quit the program
+
+		// Extra task 17 - make getHottestDayName() work with 7+ days forecast
+
+		// Extra Task 18 - Add information about wind for each day
+
+		// Extra Task 19 - Represent day temperature by dayMax and dayMin, same
+		// for wind
+		// Hint: think about representing weather for specific day as another
+		// Object which will have fields, minTemp, maxTemp, minWind, maxWind
+
 	}
 
 }
