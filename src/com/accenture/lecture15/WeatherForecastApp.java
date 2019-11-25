@@ -39,6 +39,7 @@ public class WeatherForecastApp {
 				deleteForecast();
 				break;
 			case "g":
+				addNewForecastCountry();
 				break;
 			case "q":
 				break;
@@ -80,5 +81,14 @@ public class WeatherForecastApp {
 			}
 
 		}
+	}
+	
+	public static void addNewForecastCountry() {
+		System.out.println("Input country for new forecast");
+		String country = input.nextLine();
+		
+		Weather NewForecast = Weather.getWeatherForecast(country);;
+		forecastList.add(NewForecast);
+		
 	}
 }
