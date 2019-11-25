@@ -51,12 +51,22 @@ public class Warrior {
 
 	public void fight(Warrior anotherWarrior) {
 		if (this.isAlive() && anotherWarrior.isAlive()) {
-			this.receivedDamage(anotherWarrior.damagePower);
 			anotherWarrior.receivedDamage(this.damagePower);
+			if (anotherWarrior.isAlive()) {
+				this.receivedDamage(anotherWarrior.damagePower);
+			}
 		} else {
 			System.out
 					.println("Both warriors are not alive. Fight is not gonna happen!");
 		}
+	}
+
+	public void fightTillDeath(Warrior anotherWarrior) {
+		while (this.isAlive() && anotherWarrior.isAlive()) {
+			this.fight(anotherWarrior);
+		}
+		System.out.println(this);
+		System.out.println(anotherWarrior);
 	}
 
 	public String toString() {
