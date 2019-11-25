@@ -1,8 +1,10 @@
 package com.accenture.lecture16;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class WarriorApp {
+	static Scanner input = new Scanner(System.in);
 	static ArrayList<Warrior> wList = new ArrayList<>();;
 
 	public static void printList() {
@@ -30,8 +32,23 @@ public class WarriorApp {
 		}
 	}
 
+	public static void inputWarrior(){
+		System.out.println("Input Warrior info.");
+		System.out.println("name:");
+		String name = input.nextLine();
+		System.out.println("Initial health:");
+		int health = input.nextInt();
+		System.out.println("Damage power:");
+		int power = input.nextInt();
+		Warrior w = new Warrior(name, power, health);
+		wList.add(w);
+	}
+	
+	
 	public static void main(String[] args) {
-
+		
+		inputWarrior();
+	
 		Warrior ogre = new Warrior("John", 20, 100);
 		wList.add(ogre);
 		System.out.println(ogre);
@@ -71,7 +88,7 @@ public class WarriorApp {
 		}
 		
 		System.out.println(wList.get(0));
-		
+		wList.get(0).printWarriorStatistics();
 
 	}
 
