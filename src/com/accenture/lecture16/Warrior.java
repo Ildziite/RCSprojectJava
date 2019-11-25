@@ -3,10 +3,12 @@ package com.accenture.lecture16;
 public class Warrior {
 	private String name;
 	private int health;
+	private int damagePower;
 
-	public Warrior(String name, int initialHealth) {
+	public Warrior(String name, int damagePower, int initialHealth) {
 		this.name = name;
 		this.health = initialHealth;
+		this.damagePower = damagePower;
 	}
 
 	public String getName() {
@@ -15,6 +17,10 @@ public class Warrior {
 
 	public int getHealth() {
 		return health;
+	}
+
+	public int getDamagePower() {
+		return damagePower;
 	}
 
 	private boolean isAlive() {
@@ -26,7 +32,7 @@ public class Warrior {
 			this.health = this.health - damage;
 		} else {
 			this.health = 0;
-			System.out.println("Warrior "+this.name+" is dead!");
+			System.out.println("Warrior " + this.name + " is dead!");
 		}
 	}
 
@@ -37,8 +43,19 @@ public class Warrior {
 			} else {
 				this.health = this.health + health;
 			}
-		} else{
-			System.out.println("Warrior "+this.name+"is dead and can't restore health");
+		} else {
+			System.out.println("Warrior " + this.name
+					+ "is dead and can't restore health");
+		}
+	}
+
+	public void fight(Warrior anotherWarrior) {
+		if (this.isAlive() && anotherWarrior.isAlive()) {
+			this.receivedDamage(anotherWarrior.damagePower);
+			anotherWarrior.receivedDamage(this.damagePower);
+		} else {
+			System.out
+					.println("Both warriors are not alive. Fight is not gonna happen!");
 		}
 	}
 
