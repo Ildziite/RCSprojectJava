@@ -4,6 +4,7 @@ public class Warrior {
 	private String name;
 	private int health;
 	private int damagePower;
+	
 
 	public Warrior(String name, int damagePower, int initialHealth) {
 		this.name = name;
@@ -23,7 +24,7 @@ public class Warrior {
 		return damagePower;
 	}
 
-	private boolean isAlive() {
+	public boolean isAlive() {
 		return this.health > 0;
 	}
 
@@ -61,16 +62,12 @@ public class Warrior {
 		}
 	}
 
-	public void fightTillDeath(Warrior anotherWarrior) {
-		while (this.isAlive() && anotherWarrior.isAlive()) {
-			this.fight(anotherWarrior);
-		}
-		System.out.println(this);
-		System.out.println(anotherWarrior);
-	}
+	
 
 	public String toString() {
 		return "Warrior [name=" + name + ", health=" + health + "]";
 	}
+	
+	
 
 }
