@@ -26,9 +26,9 @@ public class ObjectPractice {
 		// Example:
 		Weather Latvia = new Weather("Latvia", new int[] { -2, 0, 5, 2, 6, -1,
 				0 });
-		Weather Antaliya = new Weather("Latvia", new int[] { 12, 10, 15, 12,
+		Weather Antaliya = new Weather("Antaliya", new int[] { 12, 10, 15, 12,
 				16, 11, 10 });
-		Weather Bergen = new Weather("Latvia", new int[] { 22, 20, 25, 22, 26,
+		Weather Bergen = new Weather("Bergen", new int[] { 22, 20, 25, 22, 26,
 				-21, 20 });
 
 		// Task 5 - We should prohibit direct access to Weather object fields
@@ -70,6 +70,12 @@ public class ObjectPractice {
 		// Output: Hottest day in Latvia will be Friday
 		System.out.println("Hottest day in Latvia will be "
 				+ Latvia.getHottestDayName());
+		
+		Weather Spain = new Weather("Spain", new int[] { 22, 20, 25, 22, 26,
+				-21, 20, 27 });
+		
+		System.out.println("Hottest day in " +Spain.getCountry()+ " will be "
+				+ Spain.getHottestDayName());
 
 		// Task 10 - Create a method in class Weather which will return highest
 		// temperature

@@ -45,6 +45,8 @@ public class Weather {
 				max = this.daysWeather[i];
 			}
 		}
+		// if there is forecast for more then one week but it starts from Monday
+		maxIndex = maxIndex % 7;
 		return maxIndex;
 	}
 
@@ -65,6 +67,8 @@ public class Weather {
 				min = this.daysWeather[i];
 			}
 		}
+		// if there is forecast for more then one week but it starts from Monday
+		minIndex = minIndex % 7;
 		return minIndex;
 	}
 
