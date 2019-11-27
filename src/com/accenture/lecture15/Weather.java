@@ -6,12 +6,18 @@ import java.util.Random;
 public class Weather {
 
 	final String country;
-
-	int[] daysWeather;
-
+	private int[] daysWeather;
+	private String[] windWeather;
+	
 	public Weather(String country, int[] daysWeather) {
 		this.country = country;
 		this.daysWeather = daysWeather;
+	}
+
+	public Weather(String country, int[] daysWeather, String[] windWeather) {
+		this.country = country;
+		this.daysWeather = daysWeather;
+		this.windWeather = windWeather;
 	}
 
 	public int[] getDaysWeather() {
@@ -22,9 +28,13 @@ public class Weather {
 		return country;
 	}
 
+	public String[] getWindWeather() {
+		return windWeather;
+	}
+
 	public String toString() {
 		return "Weather forecast in '" + this.country + "' for next days '"
-				+ Arrays.toString(this.getDaysWeather()) + "'";
+				+ Arrays.toString(this.getDaysWeather()) + "'. Wind forecast "+Arrays.toString(this.getWindWeather());
 	}
 
 	public double getWeekAverage() {

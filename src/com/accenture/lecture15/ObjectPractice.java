@@ -70,12 +70,6 @@ public class ObjectPractice {
 		// Output: Hottest day in Latvia will be Friday
 		System.out.println("Hottest day in Latvia will be "
 				+ Latvia.getHottestDayName());
-		
-		Weather Spain = new Weather("Spain", new int[] { 22, 20, 25, 22, 26,
-				-21, 20, 27 });
-		
-		System.out.println("Hottest day in " +Spain.getCountry()+ " will be "
-				+ Spain.getHottestDayName());
 
 		// Task 10 - Create a method in class Weather which will return highest
 		// temperature
@@ -143,7 +137,17 @@ public class ObjectPractice {
 
 		// Extra task 17 - make getHottestDayName() work with 7+ days forecast
 
+		Weather Spain = new Weather("Spain", new int[] { 22, 20, 25, 22, 26,
+				-21, 20, 27 });
+
+		System.out.println("Hottest day in " + Spain.getCountry() + " will be "
+				+ Spain.getHottestDayName());
+
 		// Extra Task 18 - Add information about wind for each day
+
+		Weather Germany = new Weather("Germany", new int[] { 22, 20, 25, 22,
+				26, -21, 20 }, new String[] { "SE", "S" , "E", "S", "S", "E", "S" });
+		System.out.println(Germany);
 
 		// Extra Task 19 - Represent day temperature by dayMax and dayMin, same
 		// for wind
