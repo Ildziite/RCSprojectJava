@@ -29,7 +29,12 @@ public class Cylinder extends Circle{
 		return "Cylinder [radius=" + super.radius + ", color=" + super.color + ", height=" + this.height +"]";
 	}
 	
+	@Override
+	public double getArea() {
+		return super.getArea()*2+Math.PI*radius*radius;
+	}
+	
 	public double getVolume(){
-		return getArea()*height;
+		return getArea()*height+height*(2*Math.PI*radius);
 	}
 }
