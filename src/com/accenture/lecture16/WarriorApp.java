@@ -24,15 +24,15 @@ public class WarriorApp {
 
 	public static void fight(Warrior warrior1, Warrior warrior2) {
 		warrior1.fight(warrior2);
-		if (!(warrior1.isAlive())) {
+		if (!warrior1.isAlive()) {
 			wList.remove(warrior1);
-		}
-		if (!(warrior2.isAlive())) {
+		} 
+		if(!(warrior2.isAlive())) {
 			wList.remove(warrior2);
 		}
 	}
 
-	public static void inputWarrior(){
+	public static void inputWarrior() {
 		System.out.println("Input Warrior info.");
 		System.out.println("name:");
 		String name = input.nextLine();
@@ -43,12 +43,11 @@ public class WarriorApp {
 		Warrior w = new Warrior(name, power, health);
 		wList.add(w);
 	}
-	
-	
+
 	public static void main(String[] args) {
-		
+
 		inputWarrior();
-	
+
 		Warrior ogre = new Warrior("John", 20, 100);
 		wList.add(ogre);
 		System.out.println(ogre);
@@ -82,11 +81,12 @@ public class WarriorApp {
 		System.out.println(wList.size());
 
 		while (wList.size() != 1) {
+
 			for (int i = 0; i < wList.size() - 1; i++) {
 				fight(wList.get(i), wList.get(i + 1));
 			}
 		}
-		
+
 		System.out.println(wList.get(0));
 		wList.get(0).printWarriorStatistics();
 

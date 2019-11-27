@@ -78,6 +78,7 @@ public class WeatherForecastApp {
 				forecastList.remove(i);
 				System.out.println("Country " + country
 						+ " has been sucessfully deleted.");
+				break;
 			}
 
 		}

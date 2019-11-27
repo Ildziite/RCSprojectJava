@@ -59,7 +59,7 @@ public class Warrior {
 			if (anotherWarrior.isAlive()) {
 				this.receivedDamage(anotherWarrior.damagePower);
 			}
-			// wictory only if one is killed
+			// victory only if one is killed
 			if (this.isAlive() || anotherWarrior.isAlive()) {
 				if (!(this.isAlive())) {
 					anotherWarrior.wictoryList.add(this);
