@@ -5,11 +5,11 @@ public class Circle {
 	protected String color;
 
 	public Circle() {
-		this(0.0, "");
+		this(1.0,"red");
 	}
 
 	public Circle(double radius) {
-		this(radius, "");
+		this(radius, "red");
 
 	}
 
