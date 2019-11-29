@@ -31,7 +31,7 @@ public class Cylinder extends Circle{
 	
 	@Override
 	public double getArea() {
-		return super.getArea()*2+Math.PI*radius*radius;
+		return super.getArea()*2+height*(2*Math.PI*radius);
 	}
 	
 	public double getVolume(){
