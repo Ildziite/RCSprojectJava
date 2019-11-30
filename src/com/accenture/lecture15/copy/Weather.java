@@ -7,7 +7,7 @@ import java.util.Random;
 public class Weather {
 
 	final String country;
-	ArrayList<DayWeather> weatherList;
+	ArrayList<DayWeather> weatherList=new ArrayList<>();
 
 	public Weather(String country) {
 		this.country = country;
@@ -22,9 +22,9 @@ public class Weather {
 		this.weatherList.add(dayW);
 	}
 
-	public void addRandomDayWeather(int year, int month, int date) {
-		DayWeather dayW = new DayWeather(year, month, date);
-		this.weatherList.add(dayW);
+	public void addRandomDayWeather() {
+		DayWeather d1=new DayWeather();
+		this.weatherList.add(d1.makeRandomForecast());
 	}
 
 	public void printForecast() {
