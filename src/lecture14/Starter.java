@@ -1,5 +1,4 @@
 package lecture14;
-import User;
 
 import java.util.ArrayList;
 import java.util.Arrays;

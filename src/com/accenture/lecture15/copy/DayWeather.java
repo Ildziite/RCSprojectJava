@@ -1,11 +1,10 @@
 package com.accenture.lecture15.copy;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
 public class DayWeather {
-	Calendar day;
+	Date day;
 	private int minTemp;
 	private int maxTemp;
 	private int minWind;
@@ -24,7 +23,8 @@ public class DayWeather {
 		System.out.println(year);
 		System.out.println(month);
 		System.out.println(date);
-		Calendar day= Calendar.set(year, month, date);
+		@SuppressWarnings("deprecation")
+		Date day= new Date(year, month, date);
 		this.day=day;
 		System.out.println(day);
 		this.minTemp=minTemp;
@@ -33,12 +33,59 @@ public class DayWeather {
 		this.maxWind=maxWind;
 		this.wind=wind;
 	}
-
-	public DayWeather makeRandomForecast() {
-		Random rand = new Random();
-		return new DayWeather(rand.nextInt((2020-2019)+1)+2019,rand.nextInt(12),rand.nextInt(30),rand.nextInt((30 + 30) + 1) - 30,rand.nextInt((30 + 30) + 1) - 30,rand.nextInt(30),rand.nextInt(30), "S");
+	
+	public Date getDay() {
+		return day;
 	}
 
+	public void setDay(Date day) {
+		this.day = day;
+	}
+
+	public int getMinTemp() {
+		return minTemp;
+	}
+
+	public void setMinTemp(int minTemp) {
+		this.minTemp = minTemp;
+	}
+
+	public int getMaxTemp() {
+		return maxTemp;
+	}
+
+	public void setMaxTemp(int maxTemp) {
+		this.maxTemp = maxTemp;
+	}
+
+	public int getMinWind() {
+		return minWind;
+	}
+
+	public void setMinWind(int minWind) {
+		this.minWind = minWind;
+	}
+
+	public int getMaxWind() {
+		return maxWind;
+	}
+
+	public void setMaxWind(int maxWind) {
+		this.maxWind = maxWind;
+	}
+
+	public String getWind() {
+		return wind;
+	}
+
+	public void setWind(String wind) {
+		this.wind = wind;
+	}
+
+	public static DayWeather makeRandomForecast() {
+		Random rand = new Random();
+		return new DayWeather(rand.nextInt((119-118)+1)+118,rand.nextInt(11),rand.nextInt(30),rand.nextInt((30 + 30) + 1) - 30,rand.nextInt((30 + 30) + 1) - 30,rand.nextInt(30),rand.nextInt(30), "S");
+	}
 		
 	@Override
 	public String toString() {

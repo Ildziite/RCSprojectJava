@@ -1,13 +1,12 @@
 package com.accenture.lecture15.copy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.Date;
 
 public class Weather {
 
 	final String country;
-	ArrayList<DayWeather> weatherList=new ArrayList<>();
+	ArrayList<DayWeather> weatherList = new ArrayList<>();
 
 	public Weather(String country) {
 		this.country = country;
@@ -17,14 +16,40 @@ public class Weather {
 		return country;
 	}
 
-	public void addDayWeather(int year, int month, int date) {
+	public void addDayWeather(int year, int month, int date, int minTemp,
+			int maxTemp, int minWind, int maxWind, String wind) {
+		DayWeather dayW = new DayWeather(year, month, date, minTemp, maxTemp,
+				minWind, maxWind, wind);
+		this.weatherList.add(dayW);
+	}
+
+	public void addDefaultDayWeather(int year, int month, int date) {
 		DayWeather dayW = new DayWeather(year, month, date);
 		this.weatherList.add(dayW);
 	}
 
 	public void addRandomDayWeather() {
-		DayWeather d1=new DayWeather();
-		this.weatherList.add(d1.makeRandomForecast());
+		this.weatherList.add(DayWeather.makeRandomForecast());
+	}
+
+	public int getHottestIndex() {
+		int maxT = this.weatherList.get(0).getMaxTemp();
+		int maxIndex = 0;
+		for (int i = 1; i < this.weatherList.size(); i++) {
+			if (this.weatherList.get(i).getMaxTemp() > maxT) {
+				maxT = this.weatherList.get(i).getMaxTemp();
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
+
+	public int getHottestTemperature() {
+		return this.weatherList.get(this.getHottestIndex()).getMaxTemp();
+	}
+
+	public Date getHottestTempDate() {
+		return this.weatherList.get(this.getHottestIndex()).getDay();
 	}
 
 	public void printForecast() {
@@ -33,12 +58,10 @@ public class Weather {
 			System.out.println(this.weatherList.get(i));
 		}
 	}
-
 	// public String toString() {
 	// return "Weather forecast in '" + this.country + "' for next days '"
 	// + Arrays.toString(this.getDaysWeather()) +
 	// "'. Wind forecast "+Arrays.toString(this.getWindWeather());
 	// }
 
-	
 }
